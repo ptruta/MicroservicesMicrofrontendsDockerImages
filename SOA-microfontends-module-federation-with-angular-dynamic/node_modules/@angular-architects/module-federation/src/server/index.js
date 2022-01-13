@@ -1,0 +1,4 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./mf-dev-server");
+//# sourceMappingURL=index.js.map

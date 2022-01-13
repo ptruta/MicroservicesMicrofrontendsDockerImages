@@ -1,0 +1,3 @@
+export declare type DoneFn = () => void;
+export declare type Task = (done: DoneFn) => void;
+export declare function enqueuTask(task: Task): void;

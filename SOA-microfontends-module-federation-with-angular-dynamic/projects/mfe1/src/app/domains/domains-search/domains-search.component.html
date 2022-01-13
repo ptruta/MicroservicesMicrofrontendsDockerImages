@@ -1,0 +1,107 @@
+<style>
+    input[type=text] {
+        width: 100%;
+        max-width: 400px;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid rgb(70, 57, 57);
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background-color: rgb(145, 90, 145);
+    }
+
+    button {
+        border: 2px solid rgb(70, 57, 57);
+        background-color: white;
+        font-size: 16px;
+        padding: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        color:white;
+        background-color: rgb(145, 90, 145);
+    } 
+
+    button:active {
+        border-color: black;
+    }
+
+    #container {
+        border: 2px darkred dashed;
+        padding: 20px;
+    }
+
+    .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+    }
+
+    .alert1 {
+        padding: 20px;
+        background-color: #1fc448;
+        color: white;
+    }
+
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .closebtn:hover {
+        color: black;
+    }
+</style>
+
+<div id="container">
+    <div>
+        <img src="../../../assets/domain.png" width="30" padding-top="20">
+    </div>
+    
+    <ng-container>
+        <!-- <p> -->
+            <div class="alert1" *ngIf="resultFinal==='The domains were successfully saved to the domains.txt'">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                <!-- <strong>Success!</strong>  -->
+                {{resultFinal}}
+              </div>
+            <!-- <label id="lblName" style="color:rgb(20, 80, 20)" *ngIf="resultFinal==='The domains were successfully saved to the domains.txt'">
+                {{resultFinal}}
+            </label> -->
+            <div class="alert" *ngIf="resultFinal==='No domains were successfully saved to the domains.txt'">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                <!-- <strong>Danger!</strong>  -->
+                {{resultFinal}}
+              </div>
+            <!-- <label id="lblName" style="color:rgb(139, 46, 46)" *ngIf="resultFinal==='No domains were successfully saved to the domains.txt'">
+                {{resultFinal}}
+            </label> -->
+        <!-- </p> -->
+    </ng-container>
+    <div class="example-form-field" appearance="fill">
+        <h3>Enter the domain:</h3>
+        <input matInput type="text" #newDomain
+            (keyup.enter)="addDomain(newDomain.value)"
+            (blur)="addDomain(newDomain.value); newDomain.value='' ">
+        <button mat-button color ="accent" (click)="addDomain(newDomain.value)">
+            Add
+        </button>
+        <div>
+            <mat-list-item *ngFor="let domain of domains">
+              <h4 matLine> {{domain}} </h4>
+            </mat-list-item>
+        </div>
+    </div>
+    <!-- <label id = "resultFinal">{{resultFinal}}</label> -->
+</div>
+

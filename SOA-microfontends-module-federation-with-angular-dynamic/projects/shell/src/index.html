@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shell</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+
+  <style>
+      body {
+          font-family: 'Comfortaa', cursive;
+          padding-top: 80px;
+          padding-left: 10px;
+          background-color: rgb(160, 105, 160);
+      }
+  
+      ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: rgb(116, 58, 87);
+  
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+      }
+  
+      li {
+          float: left;
+          height: 50px;
+          margin-top: auto;
+          margin-bottom: auto;
+      }
+  
+      li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          cursor: pointer;
+      }
+  
+      li a:hover {
+          background-color: rgb(116, 58, 87);
+      }
+
+      pre {
+          background-color: lightgray;
+          padding:10px;
+      }
+  </style>
+
+</head>
+<body>
+  <app-root></app-root>
+  <script src="http://localhost:3000/remoteEntry.js"></script>
+  <script src="http://localhost:3001/remoteEntry.js"></script>
+  <!-- <script type="module"></script> -->
+  <!-- doItWebpack({mfe1: 'http://localhost:3000/remoteEntry.js'}) -->
+  <!-- <script src="public/http://localhost:3001/mfe2remoteEntry.js"></script> -->
+  <!-- doItWebpack({mfe2: 'http://localhost:3001/remoteEntry.js'}) -->
+</body>
+</html>

@@ -1,0 +1,86 @@
+<style>
+    input[type=text] {
+        width: 100%;
+        max-width: 400px;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid rgb(70, 57, 57);
+        font-size: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background-color: rgb(145, 90, 145);
+    }
+
+    button {
+        border: 2px solid rgb(70, 57, 57);
+        background-color: white;
+        font-size: 16px;
+        padding: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        color:white;
+        background-color: rgb(145, 90, 145);
+    } 
+
+    button:active {
+        border-color: black;
+    }
+
+    #container {
+        border: 2px navy dashed;
+        padding: 20px;
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+
+<div id="container">
+
+    <div>
+        <img src="../../../assets/domain.png" width="30" padding="20px">
+    </div>
+    <h1>Active Status</h1>
+    <div>
+
+    <!-- <h3>Enter the domain:</h3> -->
+        <input matInput type="text" #newDomain
+            (keyup.enter)="seeActiveDomains(newDomain.value)"
+            (blur)="seeActiveDomains(newDomain.value); newDomain.value='' ">
+        <button mat-button color ="accent" (click)="seeActiveDomains(newDomain.value)">
+            See Active Domains
+    </button>
+
+    <div class="row">
+    <div class="column">
+        <mat-list-item *ngFor="let domain of domains">
+            <mat-card id="container">
+                    <h4 matLine> {{domain}} </h4>
+            </mat-card>
+        </mat-list-item>
+    </div>
+    <div class="column">
+        <mat-list-item *ngFor="let status of statuses">
+            <mat-card id="container">
+                <h4 matTitle style="color:green"> {{status}} </h4>
+            </mat-card>
+        </mat-list-item>
+    </div>
+    </div>  
+    <div>
+        <ng-container #vc></ng-container>
+    </div>
+</div>

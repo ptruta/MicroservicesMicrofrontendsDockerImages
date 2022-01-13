@@ -1,0 +1,3 @@
+import { Tree } from '@nrwl/devkit';
+import { MfGeneratorSchema } from './schema';
+export default function (host: Tree, options: MfGeneratorSchema): Promise<void>;

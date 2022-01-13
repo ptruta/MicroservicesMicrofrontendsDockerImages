@@ -1,0 +1,7 @@
+import { Rule, Tree } from '@angular-devkit/schematics';
+import { MfSchematicSchema } from './schema';
+export declare function add(options: MfSchematicSchema): Rule;
+export declare function adjustSSR(sourceRoot: string, ssrMappings: string): Rule;
+export declare function getWorkspaceFileName(tree: Tree): string;
+export default function config(options: MfSchematicSchema): Rule;
+export declare function generateSsrMappings(workspace: any, projectName: string): string;

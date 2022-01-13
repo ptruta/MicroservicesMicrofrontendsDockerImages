@@ -1,0 +1,1 @@
+export declare function print(prefix: string, prefixSize: number, message: string, error?: boolean): void;

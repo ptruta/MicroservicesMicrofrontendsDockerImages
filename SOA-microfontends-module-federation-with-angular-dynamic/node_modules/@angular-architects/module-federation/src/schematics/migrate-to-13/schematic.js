@@ -1,0 +1,19 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.index = void 0;
+const tslib_1 = require("tslib");
+function index() {
+    return function (tree, context) {
+        return tslib_1.__awaiter(this, void 0, void 0, function* () {
+            console.info(`!!!
+Angular 13 compiles bundles as EcmaScript modules. 
+Hence, we need to adjust how we use Module Federation. 
+We've got you covered. Please find all information here:
+https://github.com/angular-architects/module-federation-plugin/blob/main/migration-guide.md
+!!!
+`);
+        });
+    };
+}
+exports.index = index;
+//# sourceMappingURL=schematic.js.map

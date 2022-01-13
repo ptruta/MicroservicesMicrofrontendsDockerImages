@@ -1,0 +1,10 @@
+import { NormalModuleReplacementPlugin } from 'webpack';
+export declare class SharedMappings {
+    private mappings;
+    register(tsConfigPath: string, shared?: string[], rootPath?: string): void;
+    private getPackageVersion;
+    getPlugin(): NormalModuleReplacementPlugin;
+    getAliases(): Record<string, string>;
+    getDescriptors(eager?: boolean): object;
+    getDescriptor(mappedPath: string, requiredVersion?: string): object;
+}
