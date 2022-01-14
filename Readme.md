@@ -101,6 +101,23 @@ add:
 ### 2. Code Diagram for Microfrontends:
 ![CodeDiagram Screenshot1](documentation/diagrams/CodeDiagramMfe.png)
 
+### The SOA Patterns used are:
+
+1. # Microservices Pattern - the system is decuopled in a service oriented way 
+2. # Publish Subscribe Pattern(Messaging Pattern) - the microservices function follows the publish subscribe pattern.
+3. # API Gateway Pattern - the api gateway defines how clients access the services in a Microservices architecture and is the single entry point for all clients.
+4. # Observability Pattern (Health Check API) - The API endpoint handler performs various checks, such as the status of the connections to the infrastructure services used by the service instance.
+5. # Decompose By Subdomain(Decomposition Pattern) - each domain corresponds to a different part of the business.
+
+# To sum up, the SOA Patterns used in the solution are:
+
+1. Systems are described as services independent of the underlying technology. - Microservices with Java and SpringBoot (used)
+2. Services are implemented through messaging. - Using Kafka with topics and Kafka Streams
+3. A SOA involves service providers and service consumers. - Using Kafka Streams
+4. Any participating system may act as either a provider or a consumer depending on the application's workflow. - Kafka (used)
+5. Services and messages are stateless. - Kafka (used)
+6. Services and consumers are often implemented in different programming languages, execute in different run-time environments, or both. - Kafka (used)
+7. SOA involves the services themselves, a directory of available services in some form (service discovery), and public contracts for consumers to connect and use each service (service negotiation). - Kafka (used)
 
 ## UBB Cluj-Napoca - Faculty of Mathematics and Computer Science
 
