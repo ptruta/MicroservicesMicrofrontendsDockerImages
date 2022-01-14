@@ -103,11 +103,11 @@ add:
 
 ### The SOA Patterns used are:
 
-1. # Microservices Pattern - the system is decuopled in a service oriented way 
-2. # Publish Subscribe Pattern(Messaging Pattern) - the microservices function follows the publish subscribe pattern.
-3. # API Gateway Pattern - the api gateway defines how clients access the services in a Microservices architecture and is the single entry point for all clients.
-4. # Observability Pattern (Health Check API) - The API endpoint handler performs various checks, such as the status of the connections to the infrastructure services used by the service instance.
-5. # Decompose By Subdomain(Decomposition Pattern) - each domain corresponds to a different part of the business.
+1. Microservices Pattern - the system is decuopled in a service oriented way 
+2. Publish Subscribe Pattern(Messaging Pattern) - the microservices function follows the publish subscribe pattern.
+3. API Gateway Pattern - the api gateway defines how clients access the services in a Microservices architecture and is the single entry point for all clients.
+4. Observability Pattern (Health Check API) - The API endpoint handler performs various checks, such as the status of the connections to the infrastructure services used by the service instance.
+5. Decompose By Subdomain(Decomposition Pattern) - each domain corresponds to a different part of the business.
 
 # To sum up, the SOA Patterns used in the solution are:
 
