@@ -8,40 +8,36 @@
 - https://api.domainsdb.info/v1/domains/search?domain=facebook-shops&zone=us” - to pull all facebook related web domain names
 
 # Microservices
-- ‘domain-crawler’ - uses Spring Kafka
+- ‘domain-crawler’ - uses Spring Kafka (producer)
 - 'domain-processor' - uses Spring Cloud Stream with Kafka Streams binder (producer)
 - 'domain-service' - uses Spring Cloud Stream with Kafka Streams binder (consumer)
 
 # Microfrontends
 - ‘mfe1’ - consumes REST services exposed by the controller of the  domain crawler
 - ‘mfe2’ - consumes REST services exposed by the controller of the  domain crawler
-- ‘shell’ - centralizes all the microfrontends (the center microfrontend)
+- ‘shell’ - centralizes all the microfrontends (the main microfrontend)
 
 # The technologies used are:
-- Microfrontends: Angular (Webpack, Module Federation Plugin)
-- Microservices: Spring Boot, Kafka Platform
-
-
+- Microfrontends: Angular 12 (Webpack, Module Federation Plugin)
+- Microservices: Java (Spring Boot, Apache Kafka)
 
 ## Detail Description of the app
-The Domain Crawler application was developed using Spring Boot, Kafka, Angular (with Webpack, 
-Module Federation Plugin), microservices and microfrontends. The application is a platform 
-that besides the web crawling of existing domains from an api made through microservices and 
-microfrontends mechanism, it has a client-server architecture offering read and create functionalities 
-to the client through API (Application Programming Interface) requests. There are 3 microfrontends build 
-in Angular which consume REST services exposed by the microservices. The microfrontends provide the 
-possibility to see the active web domains from a specific name accessing the https://api.domainsdb.info/v1/domains/search?domain=<name>-shops&zone=us" 
-api and also to add the domains that were found from a specific name into a local .txt file in order to keep 
-a track of them. In order to deploy the approach solution, we are using docker images for 
-constructing the containers in order to build the microservices and microfrontends and 
-access them on different ports. For accessing Kafka we used Zookeeper and for both of them we used docker 
-images already existing. 
+The Domain Crawler software system was developed using Spring Boot, Spring Kafka, Apache Kafka, Spring Cloud 
+Stream with Kafka Streams binder, Angular (with Webpack, Module Federation Plugin), microservices and microfrontends. 
+The software system is a platform that besides the web crawling of existing domains from an api made through microservices 
+and microfrontends mechanism, it has a client-server architecture offering read and create functionalities to the client 
+through API (Application Programming Interface) requests. There are 3 microfrontends build in Angular which consume REST 
+services exposed by the microservices. The microfrontends provide the possibility to see the active web domains from a specific 
+name accessing the https://api.domainsdb.info/v1/domains/search?domain=<name>-shops&zone=us" api and also to add the domains 
+that were found from a specific name into a local .txt file in order to keep a track of them. In order to deploy the approach 
+solution, we are using docker images for constructing the containers in order to build the microservices and microfrontends 
+and access them on different ports. For accessing Kafka we used Zookeeper and for both of them we used docker images already existing. 
 
 ```
-In order to access the application through docker. We made a docker container for 
-each microservices, each microfrontends and also each tool or platform that we use 
-aside. After making those containers, we could access the applications at different 
-ports(localhost:3000 for mfe1, localhost:3001 for mfe2), but the main one is localhost:5000.
+In order to deploy the software system we used docker. We made a docker container for each microservices, 
+each microfrontends and also each tool or platform that we use aside. After making those containers, we could 
+access the microfrontends and microservices at different ports(localhost:3000 for mfe1, localhost:3001 for mfe2), 
+but the main one is localhost:5000.
 ```
 
 
@@ -112,10 +108,9 @@ add:
 1. Microservices Pattern - the system is decuopled in a service oriented way 
 2. Publish Subscribe Pattern(Messaging Pattern) - the microservices function follows the publish subscribe pattern.
 3. API Gateway Pattern - the api gateway defines how clients access the services in a Microservices architecture and is the single entry point for all clients.
-4. Observability Pattern (Health Check API) - The API endpoint handler performs various checks, such as the status of the connections to the infrastructure services used by the service instance.
-5. Decompose By Subdomain(Decomposition Pattern) - each domain corresponds to a different part of the business.
+4. Decompose By Subdomain(Decomposition Pattern) - each domain corresponds to a different part of the business.
 
-# To sum up, the SOA Patterns used in the solution are:
+# The SOA Fundamentals used in the solution are:
 
 1. Systems are described as services independent of the underlying technology. - Microservices with Java and SpringBoot (used)
 2. Services are implemented through messaging. - Using Kafka with topics and Kafka Streams
@@ -124,6 +119,16 @@ add:
 5. Services and messages are stateless. - Kafka (used)
 6. Services and consumers are often implemented in different programming languages, execute in different run-time environments, or both. - Kafka (used)
 7. SOA involves the services themselves, a directory of available services in some form (service discovery), and public contracts for consumers to connect and use each service (service negotiation). - Kafka (used)
+
+# To sum up:
+
+The web server is build using Spring Boot and it exposes REST services, and using internally microservices with Kafka communication in between. 
+
+The Web application is consuming the REST services and is receiving server side notifications by having a microfronend architecture based on webpack module federation using Angular 12. 	
+
+The Integration between the web server and other 3rd party services is made by API Gateway Pattern. 
+
+We used docker containers along with docker images in order to deploy the solution in local localhost.
 
 ## UBB Cluj-Napoca - Faculty of Mathematics and Computer Science
 
