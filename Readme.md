@@ -126,7 +126,7 @@ The web server is build using Spring Boot and it exposes REST services, and usin
 
 The Web application is consuming the REST services and is receiving server side notifications by having a microfronend architecture based on webpack module federation using Angular 12. 	
 
-The Integration between the web server and other 3rd party services is made by API Gateway Pattern. 
+The Integration between the web server and other 3rd party services is through web crawling integration. For accessing the external domain-name api, we use reactor.core.publisher.Mono with Flux. 
 
 We used docker containers along with docker images in order to deploy the solution in local localhost.
 
