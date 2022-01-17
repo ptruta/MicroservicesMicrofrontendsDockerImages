@@ -22,14 +22,14 @@ module.exports = {
     alias: {
       ...sharedMappings.getAliases(),
     },
+    extensions: [".js", ".jsx"],
   },
   devServer: {
-    port: 3000,
+    compress: true,
+    allowedHosts: "all",
+    https: true,
     headers: {
-      // "Content-Type": "text/plain",
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
-      // "Access-Control-Allow-Headers": "Content-Type",
     },
   },
   experiments: {

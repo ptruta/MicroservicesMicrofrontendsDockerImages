@@ -22,14 +22,14 @@ module.exports = {
     alias: {
       ...sharedMappings.getAliases(),
     },
+    extensions: [".js", ".jsx"],
   },
   devServer: {
-    port: 5000,
+    compress: true,
+    allowedHosts: "all",
+    https: true,
     headers: {
-      // "Content-Type": "text/plain",
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
-      // "Access-Control-Allow-Headers": "Content-Type",
     },
   },
   experiments: {
@@ -41,8 +41,8 @@ module.exports = {
 
       // No remotes configured upfront anymore
       remotes: {
-        // mfe1: "mfe1@http://localhost:3000/remoteEntry.js",
-        // mfe2: "mfe2@http://localhost:3001/remoteEntry.js",
+        mfe1: "mfe1@http://localhost:3000/remoteEntry.js",
+        mfe2: "mfe2@http://localhost:3001/remoteEntry.js",
         // shell: "shell@http://localhost:5000",
       },
 

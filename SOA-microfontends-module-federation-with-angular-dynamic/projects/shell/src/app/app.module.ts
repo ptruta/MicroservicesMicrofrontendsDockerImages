@@ -7,6 +7,8 @@ import { APP_ROUTES } from './app.routes';
 import { ConfigComponent } from './config/config.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { ActiveSearchComponent } from 'projects/mfe2/src/app/active/active-search/active-search.component';
+import { DomainsSearchComponent } from 'projects/mfe1/src/app/domains/domains-search/domains-search.component';
 
 @NgModule({
   imports: [
@@ -20,7 +22,7 @@ import { MatCardModule } from '@angular/material/card';
     HomeComponent,
     ConfigComponent
   ],
-  providers: [],
+  providers: [ActiveSearchComponent, DomainsSearchComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
